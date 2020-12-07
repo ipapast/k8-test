@@ -15,27 +15,6 @@
           "name": "Snyk Infrastructure as Code",
           "rules": [
             {
-              "id": "SNYK-CC-K8S-1",
-              "shortDescription": {
-                "text": "High severity - Container is running in privileged mode"
-              },
-              "fullDescription": {
-                "text": "Type: Kubernetes Deployment, impact: Compromised container could potentially modify the underlying host’s kernel by loading unauthorized modules (i.e. drivers)."
-              },
-              "help": {
-                "text": "Remove `securityContext.privileged` attribute, or set value to `false`"
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "properties": {
-                "tags": [
-                  "security",
-                  "k8s/Deployment"
-                ]
-              }
-            },
-            {
               "id": "SNYK-CC-K8S-4",
               "shortDescription": {
                 "text": "Low severity - Container is running without memory limit"
@@ -208,25 +187,6 @@
       },
       "results": [
         {
-          "ruleId": "SNYK-CC-K8S-1",
-          "message": {
-            "text": "This line contains a potential high severity misconfiguration affecting the Kubernetes Deployment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
-                  "uriBaseId": "PROJECTROOT"
-                },
-                "region": {
-                  "startLine": 10
-                }
-              }
-            }
-          ]
-        },
-        {
           "ruleId": "SNYK-CC-K8S-4",
           "message": {
             "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
@@ -235,11 +195,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 7
+                  "startLine": 16
                 }
               }
             }
@@ -254,11 +214,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 7
+                  "startLine": 16
                 }
               }
             }
@@ -273,11 +233,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 9
+                  "startLine": 16
                 }
               }
             }
@@ -292,11 +252,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 9
+                  "startLine": 16
                 }
               }
             }
@@ -311,11 +271,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 9
+                  "startLine": 16
                 }
               }
             }
@@ -330,7 +290,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
@@ -349,11 +309,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 7
+                  "startLine": 16
                 }
               }
             }
@@ -368,11 +328,11 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uri": "deployment.yml",
                   "uriBaseId": "PROJECTROOT"
                 },
                 "region": {
-                  "startLine": 7
+                  "startLine": 16
                 }
               }
             }
