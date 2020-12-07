@@ -1,0 +1,385 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "originalUriBaseIds": {
+        "PROJECTROOT": {
+          "uri": "file:///Users/iliannapapastefanou/snyk-repos/snyk/",
+          "description": {
+            "text": "The root directory for all project files."
+          }
+        }
+      },
+      "tool": {
+        "driver": {
+          "name": "Snyk Infrastructure as Code",
+          "rules": [
+            {
+              "id": "SNYK-CC-K8S-1",
+              "shortDescription": {
+                "text": "High severity - Container is running in privileged mode"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Compromised container could potentially modify the underlying host’s kernel by loading unauthorized modules (i.e. drivers)."
+              },
+              "help": {
+                "text": "Remove `securityContext.privileged` attribute, or set value to `false`"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-4",
+              "shortDescription": {
+                "text": "Low severity - Container is running without memory limit"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Containers without memory limits are more likely to be terminated when the node runs out of memory"
+              },
+              "help": {
+                "text": "Set `resources.limits.memory` value"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-5",
+              "shortDescription": {
+                "text": "Low severity - Container is running without cpu limit"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Containers without limits can exceed the capacity of the node, and affect availability/performance of the host and other containers."
+              },
+              "help": {
+                "text": "Add `resources.limits.cpu` field with required CPU limit value"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-6",
+              "shortDescription": {
+                "text": "Medium severity - Container is running with default set of capabilities"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Containers are running with potentially unnecessary privileges"
+              },
+              "help": {
+                "text": "Add `ALL` to `securityContext.capabilities.drop` list"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-8",
+              "shortDescription": {
+                "text": "Low severity - Container is running with writable root filesystem"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Compromised process could abuse writable root filesystem to elevate privileges"
+              },
+              "help": {
+                "text": "Set `securityContext.readOnlyRootFilesystem` to `true`"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-10",
+              "shortDescription": {
+                "text": "Medium severity - Container is running without root user control"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Container could be running with full administrative privileges"
+              },
+              "help": {
+                "text": "Set `securityContext.runAsNonRoot` to `true`"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-32",
+              "shortDescription": {
+                "text": "Low severity - Container is running without AppArmor profile"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: AppArmor will not enforce mandatory access control, which can increase the attack vectors."
+              },
+              "help": {
+                "text": "Add `container.apparmor.security.beta.kubernetes.io/<container-name>` annotation with value `runtime/default` or `localhost/<name-of-profile`"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-41",
+              "shortDescription": {
+                "text": "Low severity - Container is running without liveness probe"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: Kubernetes will not be able to detect if application is able to service requests, and will not restart unhealthy pods"
+              },
+              "help": {
+                "text": "Add `livenessProbe` attribute"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            },
+            {
+              "id": "SNYK-CC-K8S-42",
+              "shortDescription": {
+                "text": "Low severity - Container could be running with outdated image"
+              },
+              "fullDescription": {
+                "text": "Type: Kubernetes Deployment, impact: The container may run with outdated or unauthorized image"
+              },
+              "help": {
+                "text": "Set `imagePullPolicy` attribute to `Always`"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "properties": {
+                "tags": [
+                  "security",
+                  "k8s/Deployment"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "SNYK-CC-K8S-1",
+          "message": {
+            "text": "This line contains a potential high severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-4",
+          "message": {
+            "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-5",
+          "message": {
+            "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-6",
+          "message": {
+            "text": "This line contains a potential medium severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-8",
+          "message": {
+            "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-10",
+          "message": {
+            "text": "This line contains a potential medium severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-32",
+          "message": {
+            "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-41",
+          "message": {
+            "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "SNYK-CC-K8S-42",
+          "message": {
+            "text": "This line contains a potential low severity misconfiguration affecting the Kubernetes Deployment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test/fixtures/iac/kubernetes/pod-privileged.yaml",
+                  "uriBaseId": "PROJECTROOT"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
