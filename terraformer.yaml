@@ -1,0 +1,7 @@
+apiVersion: ilianna/crazy/format
+kind: runtime/creds
+metadata:
+  name: this-is-test
+spec:
+  secret_key_id: something-random
+  secret_access: very-secret-987
