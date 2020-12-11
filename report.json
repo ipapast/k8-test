@@ -24,7 +24,16 @@
               },
               "help": {
                 "text": "\n        The issue is...\n        Memory limit is not defined\n        The impact of this is...\n        Containers without memory limits are more likely to be terminated when the node runs out of memory\n        You can resolve this by...\n        Set `resources.limits.memory` value",
-                "markdown": "\n        **The issue is...**\n        Memory limit is not defined\n        **The impact of this is...**\n        Containers without memory limits are more likely to be terminated when the node runs out of memory\n        **You can resolve this by...**\n        Set `resources.limits.memory` value"
+                "markdown": "**The issue is...**
+
+Memory limit is not defined
+
+**The impact of this is...**
+
+Containers without memory limits are more likely to be terminated when the node runs out of memory
+
+**You can resolve this by...**
+Set `resources.limits.memory` value"
               },
               "defaultConfiguration": {
                 "level": "warning"
