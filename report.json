@@ -20,10 +20,10 @@
                 "text": "Low severity - Container is running without memory limit"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Set `resources.limits.memory` value",
+                "text": "\n        The issue is...\n        Memory limit is not defined\n        The impact of this is...\n        Containers without memory limits are more likely to be terminated when the node runs out of memory\n        You can resolve this by...\n        Set `resources.limits.memory` value",
                 "markdown": "\n        **The issue is...**\n        Memory limit is not defined\n        **The impact of this is...**\n        Containers without memory limits are more likely to be terminated when the node runs out of memory\n        **You can resolve this by...**\n        Set `resources.limits.memory` value"
               },
               "defaultConfiguration": {
@@ -42,10 +42,10 @@
                 "text": "Low severity - Container is running without cpu limit"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Add `resources.limits.cpu` field with required CPU limit value",
+                "text": "\n        The issue is...\n        CPU limit is not defined\n        The impact of this is...\n        Containers without limits can exceed the capacity of the node, and affect availability/performance of the host and other containers.\n        You can resolve this by...\n        Add `resources.limits.cpu` field with required CPU limit value",
                 "markdown": "\n        **The issue is...**\n        CPU limit is not defined\n        **The impact of this is...**\n        Containers without limits can exceed the capacity of the node, and affect availability/performance of the host and other containers.\n        **You can resolve this by...**\n        Add `resources.limits.cpu` field with required CPU limit value"
               },
               "defaultConfiguration": {
@@ -64,10 +64,10 @@
                 "text": "Medium severity - Container is running with default set of capabilities"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Add `ALL` to `securityContext.capabilities.drop` list",
+                "text": "\n        The issue is...\n        Default capabilities are not explicitly dropped\n        The impact of this is...\n        Containers are running with potentially unnecessary privileges\n        You can resolve this by...\n        Add `ALL` to `securityContext.capabilities.drop` list",
                 "markdown": "\n        **The issue is...**\n        Default capabilities are not explicitly dropped\n        **The impact of this is...**\n        Containers are running with potentially unnecessary privileges\n        **You can resolve this by...**\n        Add `ALL` to `securityContext.capabilities.drop` list"
               },
               "defaultConfiguration": {
@@ -86,10 +86,10 @@
                 "text": "Low severity - Container is running with writable root filesystem"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Set `securityContext.readOnlyRootFilesystem` to `true`",
+                "text": "\n        The issue is...\n        `readOnlyRootFilesystem` attribute is not set to `true`\n        The impact of this is...\n        Compromised process could abuse writable root filesystem to elevate privileges\n        You can resolve this by...\n        Set `securityContext.readOnlyRootFilesystem` to `true`",
                 "markdown": "\n        **The issue is...**\n        `readOnlyRootFilesystem` attribute is not set to `true`\n        **The impact of this is...**\n        Compromised process could abuse writable root filesystem to elevate privileges\n        **You can resolve this by...**\n        Set `securityContext.readOnlyRootFilesystem` to `true`"
               },
               "defaultConfiguration": {
@@ -108,10 +108,10 @@
                 "text": "Medium severity - Container is running without root user control"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Set `securityContext.runAsNonRoot` to `true`",
+                "text": "\n        The issue is...\n        Container is running without root user control\n        The impact of this is...\n        Container could be running with full administrative privileges\n        You can resolve this by...\n        Set `securityContext.runAsNonRoot` to `true`",
                 "markdown": "\n        **The issue is...**\n        Container is running without root user control\n        **The impact of this is...**\n        Container could be running with full administrative privileges\n        **You can resolve this by...**\n        Set `securityContext.runAsNonRoot` to `true`"
               },
               "defaultConfiguration": {
@@ -130,10 +130,10 @@
                 "text": "Low severity - Container is running without AppArmor profile"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Add `container.apparmor.security.beta.kubernetes.io/<container-name>` annotation with value `runtime/default` or `localhost/<name-of-profile`",
+                "text": "\n        The issue is...\n        The AppArmor profile is not set correctly\n        The impact of this is...\n        AppArmor will not enforce mandatory access control, which can increase the attack vectors.\n        You can resolve this by...\n        Add `container.apparmor.security.beta.kubernetes.io/<container-name>` annotation with value `runtime/default` or `localhost/<name-of-profile`",
                 "markdown": "\n        **The issue is...**\n        The AppArmor profile is not set correctly\n        **The impact of this is...**\n        AppArmor will not enforce mandatory access control, which can increase the attack vectors.\n        **You can resolve this by...**\n        Add `container.apparmor.security.beta.kubernetes.io/<container-name>` annotation with value `runtime/default` or `localhost/<name-of-profile`"
               },
               "defaultConfiguration": {
@@ -152,10 +152,10 @@
                 "text": "Low severity - Container is running without liveness probe"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Add `livenessProbe` attribute",
+                "text": "\n        The issue is...\n        Liveness probe is not defined\n        The impact of this is...\n        Kubernetes will not be able to detect if application is able to service requests, and will not restart unhealthy pods\n        You can resolve this by...\n        Add `livenessProbe` attribute",
                 "markdown": "\n        **The issue is...**\n        Liveness probe is not defined\n        **The impact of this is...**\n        Kubernetes will not be able to detect if application is able to service requests, and will not restart unhealthy pods\n        **You can resolve this by...**\n        Add `livenessProbe` attribute"
               },
               "defaultConfiguration": {
@@ -174,10 +174,10 @@
                 "text": "Low severity - Container could be running with outdated image"
               },
               "fullDescription": {
-                "text": "Type: Kubernetes Deployment"
+                "text": "Kubernetes Deployment"
               },
               "help": {
-                "text": "Set `imagePullPolicy` attribute to `Always`",
+                "text": "\n        The issue is...\n        The image policy does not prevent image reuse\n        The impact of this is...\n        The container may run with outdated or unauthorized image\n        You can resolve this by...\n        Set `imagePullPolicy` attribute to `Always`",
                 "markdown": "\n        **The issue is...**\n        The image policy does not prevent image reuse\n        **The impact of this is...**\n        The container may run with outdated or unauthorized image\n        **You can resolve this by...**\n        Set `imagePullPolicy` attribute to `Always`"
               },
               "defaultConfiguration": {
