@@ -9,7 +9,7 @@
 name: Snyk Container
 on: 
   push:
-  workflow-dispatch:
+  workflow_dispatch:
   
 jobs:
   snyk-kubernetes-security:
