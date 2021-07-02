@@ -10,6 +10,7 @@ name: Snyk Container
 on: 
   push:
   workflow-dispatch:
+  
 jobs:
   snyk-kubernetes-security:
     runs-on: ubuntu-latest
